@@ -39,7 +39,6 @@ push-release:
     - script:
         name: Prepare Kubernetes files
         code: |
-          mkdir $WERCKER_OUTPUT_DIR
           mv target $WERCKER_OUTPUT_DIR
 
     - internal/docker-push:
