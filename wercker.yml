@@ -13,6 +13,11 @@ build:
     # https://devcenter.wercker.com/development/steps/
   steps:
     # https://github.com/wercker/step-maven
+    - script:
+      name: import
+      code: | 
+          export _JAVA_OPTIONS=-Djdk.net.URLClassPath.disableClassPathURLCheck=true
+
     - wercker/maven:
       goals: clean install
       version: 3.5.4
