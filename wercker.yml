@@ -39,7 +39,7 @@ push-release:
     - script:
         name: Prepare Kubernetes files
         code: |
-          mv target $WERCKER_OUTPUT_DIR
+          cp -r target $WERCKER_OUTPUT_DIR/target
 
     - internal/docker-push:
         ports: "8080"
@@ -63,7 +63,8 @@ deploy-to-kubernetes:
           
     - kubectl:
         name: deploy to kubernetes
+        cwd: target
         server: $OKE_MASTER
         token: $OKE_TOKEN
         insecure-skip-tls-verify: true
-        command: apply -f $WERCKER_OUTPUT_DIR/target/app.yaml
+        command: apply -f app.yaml
