@@ -55,6 +55,7 @@ deploy-to-kubernetes:
     box: python:2.7
     steps:
     # `apply` is a good command to use here, as it'll create Kubernetes entities if they are missing.- script:
+    - script:
         name: prepare
         code: |
             ls -lra $WERCKER_OUTPUT_DIR/
