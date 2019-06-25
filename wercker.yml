@@ -10,7 +10,7 @@ box: openjdk:8-jdk
 build:
     # Steps make up the actions in your pipeline
     # Read more about steps on our dev center:
-    # https://devcenter.wercker.com/development/steps/
+    # https://devcenter.wercker.com/development/steps//
   steps:
     # https://github.com/wercker/step-maven
     - script:
